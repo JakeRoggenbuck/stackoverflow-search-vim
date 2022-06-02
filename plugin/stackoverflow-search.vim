@@ -6,7 +6,7 @@ if exists('g:loaded_stackoverflow_search_plugin') || &compatible || v:version < 
 endif
 let g:loaded_stackoverflow_search_plugin = 1
 
-function! s:GetVisualSelection()
+function! g:GetVisualSelection()
     let [line_start, column_start] = getpos("'<")[1:2]
     let [line_end, column_end] = getpos("'>")[1:2]
     let lines = getline(line_start, line_end)
@@ -18,7 +18,7 @@ function! s:GetVisualSelection()
     return join(lines, "\n")
 endfunction
 
-function! s:SearchStackOverflow()
+function! g:SearchStackOverflow()
 	execute ':silent !command xdg-open https://stackoverflow.com/search?q=' . GetVisualSelection()
 endfunction
 
