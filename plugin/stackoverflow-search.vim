@@ -23,3 +23,4 @@ function! g:SearchStackOverflow()
 endfunction
 
 command! -bar -bang SearchStackOverflow call SearchStackOverflow()
+nnoremap <Leader>st :call SearchStackOverflow()<CR>
